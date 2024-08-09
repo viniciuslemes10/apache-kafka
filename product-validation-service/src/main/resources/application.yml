@@ -2,14 +2,30 @@ server:
   port: 8090
 
 spring:
+
   data-source:
     driver-class-name: org.postgresql.Driver
     url: jdb:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/{$DB_NAME:product-db}
     username: ${DB:USER:postgres}
     password: ${DB:PASSWORD:postgres}
+
+  kafka:
+    boostrap-servers: ${KAFKA_BROKER:9092}
+    topic:
+      teste: teste
+    consumer:
+      group-id: product-group
+      auto-offset-reset: latest
+
   jpa:
     hibernate:
       ddl-auto: create-drop
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    org:
+      apache:
+        kafka: OFF
