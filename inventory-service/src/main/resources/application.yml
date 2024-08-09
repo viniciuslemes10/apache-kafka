@@ -1,2 +1,15 @@
 server:
   port: 8092
+
+spring:
+  data-source:
+    driver-class-name: org.postgresql.Driver
+    url: jdb:postgresql://${DB_HOST:localhost}:${DB_PORT:5434}/{$DB_NAME:inventory-db}
+    username: ${DB:USER:postgres}
+    password: ${DB:PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
