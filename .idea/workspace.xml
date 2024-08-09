@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: files">
+    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: implementando configuração de acesso do apache kafka">
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/ETopics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/resources/application.yml" afterDir="false" />
@@ -59,6 +60,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -83,7 +91,8 @@
     "last_opened_file_path": "C:/Users/vinik/OneDrive/Desktop/java/apache-kafka",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RunManager" selected="Application.OrderServiceApplication">
@@ -181,13 +190,22 @@
       <option name="project" value="LOCAL" />
       <updated>1723233419244</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: implementando configuração de acesso do apache kafka">
+      <option name="closed" value="true" />
+      <created>1723234823304</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723234823304</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: implementando configuração com DB" />
     <MESSAGE value="feat: implementando configuração dos bancos de dados, Kafka e do Redpanda" />
     <MESSAGE value="feat: files" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: files" />
+    <MESSAGE value="feat: implementando configuração de acesso do apache kafka" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implementando configuração de acesso do apache kafka" />
   </component>
 </project>

@@ -6,7 +6,9 @@ spring:
   kafka:
     boostrap-servers: ${KAFKA_BROKER}
     topic:
-      teste: teste
+      orchestrator: orchestrator
+      inventory-success: inventory-success
+      inventory-fail: inventory-fail
     consumer:
       group-id: inventory-group
       auto-offset-reset: latest
