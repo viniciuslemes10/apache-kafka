@@ -4,30 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: configurando criação automáticas de tópicos nos services">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/inventory-service.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/orchestrator-service.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/order-service.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: configurando e ajustando para versão 3.1.4 do spring, alterando para java JDK 21">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orchestrator-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/gradlew.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +41,9 @@
           <activation />
         </task>
         <task path="$PROJECT_DIR$/order-service">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/orchestrator-service">
           <activation />
         </task>
         <projects_view>
@@ -105,6 +91,7 @@
     "Gradle.payment-service [:PaymentServiceApplication.main()].executor": "Run",
     "Gradle.payment-service.executor": "Run",
     "Gradle.product-validation-service [:ProductValidationServiceApplication.main()].executor": "Run",
+    "Gradle.product-validation-service.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -121,7 +108,7 @@
       <command value="gradle compileJava" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.product-validation-service">
+  <component name="RunManager" selected="Gradle.orchestrator-service">
     <configuration name="inventory-service" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -224,11 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.orchestrator-service" />
+        <item itemvalue="Gradle.order-service" />
         <item itemvalue="Gradle.product-validation-service" />
         <item itemvalue="Gradle.payment-service" />
         <item itemvalue="Gradle.inventory-service" />
-        <item itemvalue="Gradle.orchestrator-service" />
-        <item itemvalue="Gradle.order-service" />
       </list>
     </recent_temporary>
   </component>
@@ -305,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723488263341</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: configurando e ajustando para versão 3.1.4 do spring, alterando para java JDK 21">
+      <option name="closed" value="true" />
+      <created>1723494085988</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723494085988</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -317,6 +312,7 @@
     <MESSAGE value="feat: implementando mapeamento de topicos com enum" />
     <MESSAGE value="feat: configurando consumers e producers do Kafka" />
     <MESSAGE value="feat: configurando criação automáticas de tópicos nos services" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: configurando criação automáticas de tópicos nos services" />
+    <MESSAGE value="feat: configurando e ajustando para versão 3.1.4 do spring, alterando para java JDK 21" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: configurando e ajustando para versão 3.1.4 do spring, alterando para java JDK 21" />
   </component>
 </project>

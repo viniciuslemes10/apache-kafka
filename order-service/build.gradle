@@ -6,8 +6,7 @@ plugins {
 
 group = 'br.com.microservices.orchestrated'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '21'
-targetCompatibility = '21'
+sourceCompatibility = '17'
 
 configurations {
 	compileOnly {
