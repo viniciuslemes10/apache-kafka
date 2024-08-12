@@ -23,7 +23,7 @@ public class KafkaConfig {
     private static final Integer PARTITION_COUNT = 1;
     private static final Integer REPLICA_COUNT = 1;
 
-    @Value("${spring.kafka.boostrap-servers}")
+    @Value("${spring.kafka.bootstrap-servers}")
     private String boostrapServers;
 
     @Value("${spring.kafka.consumer.group-id}")
