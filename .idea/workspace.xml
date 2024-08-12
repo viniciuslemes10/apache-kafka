@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: implementando mapeamento de topicos com enum">
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config/kafka/KafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/config/kafka/KafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/config/kafka/KafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/config/kafka/KafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/config/kafka/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: configurando consumers e producers do Kafka">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/ETopics.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/enuns/ETopics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/config/kafka/KafkaConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,13 +97,26 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.OrderServiceApplication">
+  <component name="RunManager" selected="Application.OrchestratorServiceApplication">
     <configuration name="InventoryServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.microservices.orchestrated.inventoryservice.InventoryServiceApplication" />
       <module name="inventory-service.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="br.com.microservices.orchestrated.inventoryservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrchestratorServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.microservices.orchestrated.orchestratorservice.OrchestratorServiceApplication" />
+      <module name="orchestrator-service.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.microservices.orchestrated.orchestratorservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,6 +165,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OrchestratorServiceApplication" />
         <item itemvalue="Application.InventoryServiceApplication" />
         <item itemvalue="Application.PaymentServiceApplication" />
         <item itemvalue="Application.ProductValidationServiceApplication" />
@@ -215,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723237200214</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: configurando consumers e producers do Kafka">
+      <option name="closed" value="true" />
+      <created>1723480872386</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723480872386</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,6 +248,7 @@
     <MESSAGE value="feat: implementando configuração de acesso do apache kafka" />
     <MESSAGE value="feat: mapeando topicos" />
     <MESSAGE value="feat: implementando mapeamento de topicos com enum" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implementando mapeamento de topicos com enum" />
+    <MESSAGE value="feat: configurando consumers e producers do Kafka" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: configurando consumers e producers do Kafka" />
   </component>
 </project>
