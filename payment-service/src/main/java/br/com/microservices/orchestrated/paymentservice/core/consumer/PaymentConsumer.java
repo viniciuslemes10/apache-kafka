@@ -1,6 +1,6 @@
 package br.com.microservices.orchestrated.paymentservice.core.consumer;
 
-import br.com.microservices.orchestrated.productvalidationservice.core.utils.JsonUtil;
+import br.com.microservices.orchestrated.paymentservice.core.utils.JsonUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;

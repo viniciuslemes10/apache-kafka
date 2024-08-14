@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class KafkaProducer {
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-    @Value("${spring.kafka.topic.orchestator}")
+    @Value("${spring.kafka.topic.orchestrator}")
     private String orchestratorTopic;
 
     public void sendEvent(String payload) {
