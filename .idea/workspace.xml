@@ -4,27 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: estruturando classes DTOS dos microsserviços">
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config/exception/ExceptionDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config/exception/ExceptionGlobalHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config/exception/ValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/utils/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/config/exceptions/ExceptionDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/config/exceptions/ExceptionGlobalHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/config/exceptions/ValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/utils/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/config/exceptions/ExceptionDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/config/exceptions/ExceptionGlobalHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/config/exceptions/ValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/utils/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/config/exception/ExceptionDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/config/exception/ExceptionGlobalHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/config/exception/ValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/utils/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/config/exception/ExceptionDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/config/exception/ExceptionGlobalHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/config/exception/ValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/utils/JsonUtil.java" afterDir="false" />
+    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: estruturando o utilitário de JSON e configuração de Exception">
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/producer/KafkaProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/producer/SagaOrchestratorProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/producer/SagaProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/producer/KafkaProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/producer/KafkaProducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,11 +124,11 @@
       <recent name="C:\Users\vinik\OneDrive\Desktop\java\apache-kafka\inventory-service\src\main\java\br\com\microservices\orchestrated\inventoryservice\core\dto" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.microservices.orchestrated.orchestratorservice.core.producer" />
+      <recent name="br.com.microservices.orchestrated.inventoryservice.core.producer" />
+      <recent name="br.com.microservices.orchestrated.paymentservice.core.producer" />
       <recent name="br.com.microservices.orchestrated.inventoryservice.core.utils" />
       <recent name="br.com.microservices.orchestrated.paymentservice.core.utils" />
-      <recent name="br.com.microservices.orchestrated.productvalidationservice.core.utils" />
-      <recent name="br.com.microservices.orchestrated.orchestratorservice.core.utils" />
-      <recent name="br.com.microservices.orchestrated.inventoryservice.core.enums" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -355,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723639312024</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: estruturando o utilitário de JSON e configuração de Exception">
+      <option name="closed" value="true" />
+      <created>1723640831026</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1723640831026</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -371,6 +364,7 @@
     <MESSAGE value="feat: mudando para JDK 17" />
     <MESSAGE value="feat: ajustando erros" />
     <MESSAGE value="feat: estruturando classes DTOS dos microsserviços" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: estruturando classes DTOS dos microsserviços" />
+    <MESSAGE value="feat: estruturando o utilitário de JSON e configuração de Exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: estruturando o utilitário de JSON e configuração de Exception" />
   </component>
 </project>
