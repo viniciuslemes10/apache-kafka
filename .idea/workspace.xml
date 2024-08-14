@@ -4,37 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: ajustando erros">
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/dto/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/dto/History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/dto/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/dto/OrderProducts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/dto/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/enums/ESagaStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/dto/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/dto/History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/dto/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/dto/OrderProducts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/dto/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/enuns/EEventSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/enuns/ESagaStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/document/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/document/History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/document/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/document/OrderProducts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/document/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/dto/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/dto/History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/dto/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/dto/OrderProducts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/dto/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/enums/ESagaStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/dto/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/dto/History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/dto/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/dto/OrderProducts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/dto/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/enums/ESagaStatus.java" afterDir="false" />
+    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: estruturando classes DTOS dos microsserviços">
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config/exception/ExceptionDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config/exception/ExceptionGlobalHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config/exception/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/utils/JsonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/config/exceptions/ExceptionDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/config/exceptions/ExceptionGlobalHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/config/exceptions/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/utils/JsonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/config/exceptions/ExceptionDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/config/exceptions/ExceptionGlobalHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/config/exceptions/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/utils/JsonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/config/exception/ExceptionDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/config/exception/ExceptionGlobalHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/config/exception/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/utils/JsonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/config/exception/ExceptionDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/config/exception/ExceptionGlobalHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/config/exception/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/utils/JsonUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,8 +84,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -129,7 +120,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/vinik/OneDrive/Desktop/java/apache-kafka/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/dto",
+    "last_opened_file_path": "C:/Users/vinik/OneDrive/Desktop/java/apache-kafka/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/config/exception",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -141,16 +132,18 @@
       <recent name="br.com.microservices.orchestrated.orderservice.core.document" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vinik\OneDrive\Desktop\java\apache-kafka\inventory-service\src\main\java\br\com\microservices\orchestrated\inventoryservice\config\exception" />
+      <recent name="C:\Users\vinik\OneDrive\Desktop\java\apache-kafka\payment-service\src\main\java\br\com\microservices\orchestrated\paymentservice\config\exception" />
+      <recent name="C:\Users\vinik\OneDrive\Desktop\java\apache-kafka\product-validation-service\src\main\java\br\com\microservices\orchestrated\productvalidationservice\config\exception" />
+      <recent name="C:\Users\vinik\OneDrive\Desktop\java\apache-kafka\orchestrator-service\src\main\java\br\com\microservices\orchestrated\orchestratorservice\config\exceptions" />
       <recent name="C:\Users\vinik\OneDrive\Desktop\java\apache-kafka\inventory-service\src\main\java\br\com\microservices\orchestrated\inventoryservice\core\dto" />
-      <recent name="C:\Users\vinik\OneDrive\Desktop\java\apache-kafka\payment-service\src\main\java\br\com\microservices\orchestrated\paymentservice\core\dto" />
-      <recent name="C:\Users\vinik\OneDrive\Desktop\java\apache-kafka\product-validation-service\src\main\java\br\com\microservices\orchestrated\productvalidationservice\core\dto" />
-      <recent name="C:\Users\vinik\OneDrive\Desktop\java\apache-kafka\orchestrator-service\src\main\java\br\com\microservices\orchestrated\orchestratorservice\core\dto" />
-      <recent name="C:\Users\vinik\OneDrive\Desktop\java\apache-kafka\inventory-service\src\main\java\br\com\microservices\orchestrated\inventoryservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.microservices.orchestrated.inventoryservice.core.utils" />
+      <recent name="br.com.microservices.orchestrated.paymentservice.core.utils" />
+      <recent name="br.com.microservices.orchestrated.productvalidationservice.core.utils" />
+      <recent name="br.com.microservices.orchestrated.orchestratorservice.core.utils" />
       <recent name="br.com.microservices.orchestrated.inventoryservice.core.enums" />
-      <recent name="br.com.microservices.orchestrated.paymentservice.core.enums" />
-      <recent name="br.com.microservices.orchestrated.productvalidationservice.core.enums" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -354,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723636445803</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: estruturando classes DTOS dos microsserviços">
+      <option name="closed" value="true" />
+      <created>1723639312024</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1723639312024</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -369,6 +370,7 @@
     <MESSAGE value="feat: configurando e ajustando para versão 3.1.4 do spring, alterando para java JDK 21" />
     <MESSAGE value="feat: mudando para JDK 17" />
     <MESSAGE value="feat: ajustando erros" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: ajustando erros" />
+    <MESSAGE value="feat: estruturando classes DTOS dos microsserviços" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: estruturando classes DTOS dos microsserviços" />
   </component>
 </project>
