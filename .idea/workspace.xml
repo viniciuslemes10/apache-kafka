@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: estruturando o utilitário de JSON e configuração de Exception">
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/producer/KafkaProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/producer/SagaOrchestratorProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/producer/SagaProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/producer/KafkaProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/producer/KafkaProducer.java" afterDir="false" />
+    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: criando producers da aplicação">
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/consumer/InventoryConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/consumer/SagaOrchestratorConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/consumer/EventConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/consumer/PaymentConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/consumer/ProductValidationConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,11 +125,11 @@
       <recent name="C:\Users\vinik\OneDrive\Desktop\java\apache-kafka\inventory-service\src\main\java\br\com\microservices\orchestrated\inventoryservice\core\dto" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.microservices.orchestrated.inventoryservice.core.consumer" />
+      <recent name="br.com.microservices.orchestrated.paymentservice.core.consumer" />
+      <recent name="br.com.microservices.orchestrated.productvalidationservice.core.consumer" />
+      <recent name="br.com.microservices.orchestrated.orchestratorservice.core.consumer" />
       <recent name="br.com.microservices.orchestrated.orchestratorservice.core.producer" />
-      <recent name="br.com.microservices.orchestrated.inventoryservice.core.producer" />
-      <recent name="br.com.microservices.orchestrated.paymentservice.core.producer" />
-      <recent name="br.com.microservices.orchestrated.inventoryservice.core.utils" />
-      <recent name="br.com.microservices.orchestrated.paymentservice.core.utils" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -136,7 +137,7 @@
       <command value="gradle compileJava" />
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.order-service: Compose Deployment">
+  <component name="RunManager" selected="Application.OrderServiceApplication">
     <configuration name="InventoryServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.microservices.orchestrated.inventoryservice.InventoryServiceApplication" />
       <module name="inventory-service.main" />
@@ -150,30 +151,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrderServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.microservices.orchestrated.orderservice.OrderServiceApplication" />
+      <module name="order-service.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.microservices.orchestrated.orderservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="inventory-service" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/inventory-service" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="orchestrator-service" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/orchestrator-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -219,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OrderServiceApplication" />
         <item itemvalue="Docker.docker-compose.yml.order-service: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Gradle.inventory-service" />
         <item itemvalue="Application.InventoryServiceApplication" />
-        <item itemvalue="Gradle.orchestrator-service" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723640831026</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: criando producers da aplicação">
+      <option name="closed" value="true" />
+      <created>1723644071484</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1723644071484</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -365,6 +367,7 @@
     <MESSAGE value="feat: ajustando erros" />
     <MESSAGE value="feat: estruturando classes DTOS dos microsserviços" />
     <MESSAGE value="feat: estruturando o utilitário de JSON e configuração de Exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: estruturando o utilitário de JSON e configuração de Exception" />
+    <MESSAGE value="feat: criando producers da aplicação" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: criando producers da aplicação" />
   </component>
 </project>
