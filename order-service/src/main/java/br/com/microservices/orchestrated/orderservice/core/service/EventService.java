@@ -50,7 +50,7 @@ public class EventService {
     }
 
     private Event findByTransactionId(String transactionId) {
-        return repository.findTop1TransactionIdOrderByCreatedAtDesc(transactionId)
+        return repository.findTop1ByTransactionIdOrderByCreatedAtDesc(transactionId)
                 .orElseThrow(() -> new ValidationException("Event not found by transactionId."));
     }
 
