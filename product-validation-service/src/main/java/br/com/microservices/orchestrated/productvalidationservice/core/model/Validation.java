@@ -38,6 +38,7 @@ public class Validation {
         this.createdAt = now;
         this.updatedAt = now;
     }
+
     @PrePersist
     public void preUpdate() {
         this.updatedAt = LocalDateTime.now();
