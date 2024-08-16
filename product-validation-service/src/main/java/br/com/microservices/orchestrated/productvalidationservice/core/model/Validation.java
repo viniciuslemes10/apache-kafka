@@ -41,7 +41,6 @@ public class Validation {
         this.updatedAt = now;
     }
 
-    @PrePersist
     public void preUpdate() {
         this.updatedAt = LocalDateTime.now();
     }

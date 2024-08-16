@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: criando repositories para persistencia de dados">
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/repository/ProductRepository.java" afterDir="false" />
+    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: implementando método para existencia e busca dos campos orderId e transactionId">
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/resources/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/model/Validation.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/model/Validation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +134,7 @@
       <command value="gradle compileJava" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.OrderServiceApplication">
+  <component name="RunManager" selected="Application.ProductValidationServiceApplication">
     <configuration name="InventoryServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.microservices.orchestrated.inventoryservice.InventoryServiceApplication" />
       <module name="inventory-service.main" />
@@ -463,12 +465,26 @@
       <option name="project" value="LOCAL" />
       <updated>1723761003136</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat: implementando método para existencia do campo code">
+      <option name="closed" value="true" />
+      <created>1723761077565</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1723761077565</updated>
+    </task>
+    <task id="LOCAL-00032" summary="feat: implementando método para existencia e busca dos campos orderId e transactionId">
+      <option name="closed" value="true" />
+      <created>1723761352114</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1723761352114</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: implementando configuração dos bancos de dados, Kafka e do Redpanda" />
-    <MESSAGE value="feat: files" />
     <MESSAGE value="feat: implementando configuração de acesso do apache kafka" />
     <MESSAGE value="feat: mapeando topicos" />
     <MESSAGE value="feat: implementando mapeamento de topicos com enum" />
@@ -492,6 +508,8 @@
     <MESSAGE value="feat: mapeando entidade com seus atributos" />
     <MESSAGE value="feat: add builder para facilitar a criação do objeto" />
     <MESSAGE value="feat: criando repositories para persistencia de dados" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: criando repositories para persistencia de dados" />
+    <MESSAGE value="feat: implementando método para existencia do campo code" />
+    <MESSAGE value="feat: implementando método para existencia e busca dos campos orderId e transactionId" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implementando método para existencia e busca dos campos orderId e transactionId" />
   </component>
 </project>
