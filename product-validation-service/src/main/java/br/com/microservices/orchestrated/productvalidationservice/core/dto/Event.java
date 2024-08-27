@@ -24,7 +24,7 @@ public class Event {
     private String source;
     private ESagaStatus status;
     private List<History> eventHistory;
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
 
     public void addToHistory(History history) {
         if(isEmpty(eventHistory)) {
