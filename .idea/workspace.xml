@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: modelando as classes e entidade no banco de dados">
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/import.sql" afterDir="false" />
+    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: inserindo os dados iniciais da aplicação">
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/service/InventoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/model/OrderInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/model/OrderInventory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +68,8 @@
       <list>
         <option value="Record" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -560,7 +561,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724786838573</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="feat: inserindo os dados iniciais da aplicação">
+      <option name="closed" value="true" />
+      <created>1724788062960</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1724788062960</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -580,7 +589,6 @@
     <MESSAGE value="feat: criando repositories para persistencia de dados" />
     <MESSAGE value="feat: implementando método para existencia do campo code" />
     <MESSAGE value="feat: implementando método para existencia e busca dos campos orderId e transactionId" />
-    <MESSAGE value="feat: inserindo os dados iniciais da aplicação" />
     <MESSAGE value="feat: método para fazer adição de history" />
     <MESSAGE value="feat: criando lógica para validar um produto existente" />
     <MESSAGE value="feat: criando lógica para o rollback de produtos" />
@@ -589,6 +597,7 @@
     <MESSAGE value="feat: criação da lógica para realizar pagamentos com SUCESSO" />
     <MESSAGE value="feat: criação da lógica para realizar extorno(rollback)" />
     <MESSAGE value="feat: modelando as classes e entidade no banco de dados" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: modelando as classes e entidade no banco de dados" />
+    <MESSAGE value="feat: inserindo os dados iniciais da aplicação" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: inserindo os dados iniciais da aplicação" />
   </component>
 </project>
