@@ -1,5 +1,6 @@
 package br.com.microservices.orchestrated.paymentservice.core.service;
 
+import br.com.microservices.orchestrated.paymentservice.config.exception.ValidationException;
 import br.com.microservices.orchestrated.paymentservice.core.dto.Event;
 import br.com.microservices.orchestrated.paymentservice.core.dto.History;
 import br.com.microservices.orchestrated.paymentservice.core.dto.OrderProducts;
@@ -8,7 +9,6 @@ import br.com.microservices.orchestrated.paymentservice.core.model.Payment;
 import br.com.microservices.orchestrated.paymentservice.core.producer.KafkaProducer;
 import br.com.microservices.orchestrated.paymentservice.core.repository.PaymentRepository;
 import br.com.microservices.orchestrated.paymentservice.core.utils.JsonUtil;
-import br.com.microservices.orchestrated.productvalidationservice.config.exception.ValidationException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -17,18 +17,18 @@ import java.time.LocalDateTime;
 
 import static br.com.microservices.orchestrated.paymentservice.core.enums.ESagaStatus.*;
 
+@Slf4j
 @Service
 @AllArgsConstructor
-@Slf4j
 public class PaymentService {
 
     private static final String CURRENT_SOURCE = "PAYMENT_SERVICE";
     private static final Double REDUCE_SUM_VALUE = 0.0;
-    private static final Double MIN_AMOUNT = 0.1;
+    private static final Double MIN_VALUE_AMOUNT = 0.1;
 
     private final JsonUtil jsonUtil;
     private final KafkaProducer producer;
-    private final PaymentRepository repository;
+    private final PaymentRepository paymentRepository;
 
     public void realizePayment(Event event) {
         try {
@@ -38,11 +38,17 @@ public class PaymentService {
             validateAmount(payment.getTotalAmount());
             changePaymentToSuccess(payment);
             handleSuccess(event);
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             log.error("Error trying to make payment: ", ex);
-            handleFailCurrentNotExecute(event, ex.getMessage());
+            handleFailCurrentNotExecuted(event, ex.getMessage());
         }
         producer.sendEvent(jsonUtil.toJson(event));
+    }
+
+    private void checkCurrentValidation(Event event) {
+        if (paymentRepository.existsByOrderIdAndTransactionId(event.getPayload().getId(), event.getTransactionId())) {
+            throw new ValidationException("There's another transactionId for this validation.");
+        }
     }
 
     private void createPendingPayment(Event event) {
@@ -78,22 +84,13 @@ public class PaymentService {
     }
 
     private void setEventAmountItems(Event event, Payment payment) {
-        event.getPayload().setTotalItems(payment.getTotalItems());
         event.getPayload().setTotalAmount(payment.getTotalAmount());
-    }
-
-    private void save(Payment payment) {
-        repository.save(payment);
-    }
-
-    private Payment findByOrderIdAndTransactionId(Event event) {
-        return repository.findByOrderIdAndTransactionId(event.getPayload().getId(), event.getTransactionId())
-                .orElseThrow(() -> new ValidationException("Payment not found by OrderId and TransactionId."));
+        event.getPayload().setTotalItems(payment.getTotalItems());
     }
 
     private void validateAmount(double amount) {
-        if(amount < MIN_AMOUNT) {
-            throw new ValidationException("The minimum amount available is ".concat(MIN_AMOUNT.toString()));
+        if (amount < MIN_VALUE_AMOUNT) {
+            throw new ValidationException("The minimal amount available is ".concat(String.valueOf(MIN_VALUE_AMOUNT)));
         }
     }
 
@@ -114,22 +111,26 @@ public class PaymentService {
                 .source(event.getSource())
                 .status(event.getStatus())
                 .message(message)
-                .createAt(LocalDateTime.now())
+                .createdAt(LocalDateTime.now())
                 .build();
-        event.addHistory(history);
+        event.addToHistory(history);
     }
 
-    private void handleFailCurrentNotExecute(Event event, String message) {
+    private void handleFailCurrentNotExecuted(Event event, String message) {
         event.setStatus(ROLLBACK_PENDING);
         event.setSource(CURRENT_SOURCE);
         addHistory(event, "Fail to realize payment: ".concat(message));
     }
 
     public void realizeRefund(Event event) {
-        changePaymentStatusToRefund(event);
         event.setStatus(FAIL);
         event.setSource(CURRENT_SOURCE);
-        addHistory(event, "Rollback execute for payment!");
+        try {
+            changePaymentStatusToRefund(event);
+            addHistory(event, "Rollback executed for payment!");
+        } catch (Exception ex) {
+            addHistory(event, "Rollback not executed for payment: ".concat(ex.getMessage()));
+        }
         producer.sendEvent(jsonUtil.toJson(event));
     }
 
@@ -140,9 +141,12 @@ public class PaymentService {
         save(payment);
     }
 
-    private void checkCurrentValidation(Event event) {
-        if(repository.existsByOrderIdAndTransactionId(event.getPayload().getId(), event.getTransactionId())) {
-            throw new ValidationException("There's another transactionId for this validation.");
-        }
+    private Payment findByOrderIdAndTransactionId(Event event) {
+        return paymentRepository
+                .findByOrderIdAndTransactionId(event.getPayload().getId(), event.getTransactionId())
+                .orElseThrow(() -> new ValidationException("Payment not found by orderID and transactionID"));
     }
-}
+
+    private void save(Payment payment) {
+        paymentRepository.save(payment);
+    }}

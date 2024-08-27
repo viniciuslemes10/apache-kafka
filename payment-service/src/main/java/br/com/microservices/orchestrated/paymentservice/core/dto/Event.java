@@ -15,20 +15,21 @@ import static org.springframework.util.ObjectUtils.isEmpty;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Event {
+
     private String id;
-    private String transactionId;
     private String orderId;
+    private String transactionId;
     private Order payload;
     private String source;
     private ESagaStatus status;
     private List<History> eventHistory;
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
 
-    public void addHistory(History history) {
-        if(isEmpty(history)) {
+    public void addToHistory(History history) {
+        if (isEmpty(eventHistory)) {
             eventHistory = new ArrayList<>();
         }
         eventHistory.add(history);
