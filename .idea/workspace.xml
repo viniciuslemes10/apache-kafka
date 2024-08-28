@@ -4,9 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: criando a classe SagaHandler para lidar com a orquestração">
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/saga/SagaExecutionController.java" afterDir="false" />
+    <list default="true" id="c364587b-d316-4b2d-bfb3-071451a2ef73" name="Changes" comment="feat: criando o SEC(Saga Execution Controller) e toda a lógica da saga">
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/service/OrchestratorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/dto/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/br/com/microservices/orchestrated/inventoryservice/core/service/InventoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/consumer/SagaOrchestratorConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/consumer/SagaOrchestratorConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/dto/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/dto/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/br/com/microservices/orchestrated/orchestratorservice/core/dto/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/document/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/document/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/document/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/document/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/document/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/document/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/br/com/microservices/orchestrated/orderservice/core/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/dto/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/dto/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/dto/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/br/com/microservices/orchestrated/paymentservice/core/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/dto/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/dto/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/dto/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/service/ProductValidationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/br/com/microservices/orchestrated/productvalidationservice/core/service/ProductValidationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +148,7 @@
       <command value="gradle compileJava" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.InventoryServiceApplication">
+  <component name="RunManager" selected="Application.OrderServiceApplication">
     <configuration name="InventoryServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.microservices.orchestrated.inventoryservice.InventoryServiceApplication" />
       <module name="inventory-service.main" />
@@ -608,11 +623,18 @@
       <option name="project" value="LOCAL" />
       <updated>1724803578384</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="feat: criando o SEC(Saga Execution Controller) e toda a lógica da saga">
+      <option name="closed" value="true" />
+      <created>1724858110746</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1724858110746</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: mapeando dtos, documents e repository do microsserviço" />
     <MESSAGE value="feat: criando a lógica de geração de um pedido" />
     <MESSAGE value="feat: criando a lógica de recebimento de notificação finalizada da Saga" />
     <MESSAGE value="feat: criando endpoint REST para salvar pedido e para buscar Events" />
@@ -637,6 +659,7 @@
     <MESSAGE value="feat: criando lógica para atualizar o estoque com sucesso" />
     <MESSAGE value="feat: criando lógica para rollback no estoque anterior" />
     <MESSAGE value="feat: criando a classe SagaHandler para lidar com a orquestração" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: criando a classe SagaHandler para lidar com a orquestração" />
+    <MESSAGE value="feat: criando o SEC(Saga Execution Controller) e toda a lógica da saga" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: criando o SEC(Saga Execution Controller) e toda a lógica da saga" />
   </component>
 </project>

@@ -26,7 +26,7 @@ public class OrderService {
     public Order createOrder(OrderRequest orderRequest) {
         var order = Order.builder()
                 .products(orderRequest.getProducts())
-                .createAt(LocalDateTime.now())
+                .createdAt(LocalDateTime.now())
                 .transactionId(
                         String.format(TRANSACTION_ID_PATTER, Instant.now().toEpochMilli(), UUID.randomUUID())
                 )

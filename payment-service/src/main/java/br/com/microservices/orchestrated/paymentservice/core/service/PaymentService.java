@@ -111,7 +111,7 @@ public class PaymentService {
                 .source(event.getSource())
                 .status(event.getStatus())
                 .message(message)
-                .createdAt(LocalDateTime.now())
+                .createAt(LocalDateTime.now())
                 .build();
         event.addToHistory(history);
     }
